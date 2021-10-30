@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mister canvas</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body onload="init()">
+
+    <div class="modal-share">
+        <h2 class="user-msg"></h2>
+        <div class="share-container"></div>
+        <button class="closeBtn" onclick="hideModal()">Close</button>
+    </div>
+    <button class="tools" onclick="openToolsModal()"></button>
+    <section class="all-options-draw">
+        <select name="shape-selector " id="shape" onchange="onChangeShape(this.value)">
+                <option value="line" >Line</option>
+                <option value="triangle" >Triangle</option>
+                <option value="rect" >Rect</option>
+                <option value="circle" >Circle</option>
+                <option value="text" >Text</option>
+                <option value="circle-line" >circle-line</option>
+                <option value="triangle-carzy" >Triangle-carzy</option>
+            </select>
+        <button onclick="clearCanvas()">Clear</button>
+        <a href="#" onclick="downloadCanvas(this)" download="myphoto">Download</a>
+        <input type="color" id="color" name="color" value="#f6b73c" onchange="onChangeColor(this.value)">
+        <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
+        <button class="btn" onclick="uploadImg()">Upload Image from Canvas</button>
+        <input type="range" id="range" name="range" min="1" max="10" value="1" onchange="showRange(this.value)"><span class="show-range">1</span>
+    </section>
+    <div class="canvas-container">
+        <canvas id="my-canvas" height="450" width="450">
+            <!-- Update your browser to enjoy canvas! -->
+        </canvas>
+    </div>
+
+    <script src="js/upload-image.js"></script>
+    <script src="./js/shapes-draw.js"></script>
+    <script src="js/canvas-controller.js "></script>
+</body>
+
+</html>
